@@ -35,6 +35,11 @@ body {
         width: 480px;
         padding: 0 16px;
     }
+
+    @media (max-width: 480px) {
+        width: 360px;
+        padding: 0 16px;
+    }
 }
 
 a {

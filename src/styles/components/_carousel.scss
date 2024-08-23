@@ -2,9 +2,11 @@
     overflow: hidden;
 
     .slick-track {
-        height: 210px;
+        height: 180px;
         margin-top: 16px;
         margin-bottom: 10px;
+
+        
 
         @media (max-width: 991px) { 
             height: 100px !important;
@@ -14,7 +16,7 @@
 
     &-item {
         width: 396px;
-        height: 210 !important;
+        height: 170px !important;
         border-radius: 16px;
         background-color:#fff;
         margin: 0 16px;
@@ -22,8 +24,40 @@
         padding: 32px;
         position: relative;
 
-        @media (max-width: 991px) { 
-            height: 156px !important;
+        @media (max-width: 1313px) { 
+            height: 190px !important;
+        }
+
+        @media (max-width: 1120px) { 
+            height: 210px !important;
+        }
+
+        @media (max-width: 1000px) { 
+            height: 150px !important;
+        }
+
+        @media (max-width: 684px) { 
+            height: 174px !important;
+        }
+
+        @media (max-width: 518px) { 
+            height: 190px !important;
+        }
+
+        @media (max-width: 440px) { 
+            height: 210px !important;
+        }
+
+        @media (max-width: 400px) { 
+            height: 240px !important;
+        }
+
+        @media (max-width: 375px) { 
+            height: 256px !important;
+        }
+
+        @media (max-width: 370px) { 
+            height: 278px !important;
         }
         
         .title {
@@ -45,6 +79,10 @@
             position: absolute;
             top: 32px;
             right: 32px;
+
+            @media (max-width: 480px) {
+                right: 12px;
+            }
 
             img {
                 width: 100%;
@@ -115,7 +153,14 @@
         @media (max-width: 767px) { 
             margin: 0 18px;
             padding: 20px;
-            height: 300px !important;
+            height: 310px !important;
+        }
+
+        .steps_item {
+            @media (max-width: 480px) {
+                height: 320px !important;
+                width: 300px !important;
+            }
         }
 
         .steps_item:last-child {

@@ -38,6 +38,10 @@ h2 {
     font-weight: 500;
     font-size: 32px;
     text-align: center;
+
+    @media (max-width: 480px) {
+        margin: 10px;
+    }
 }
 
 menu {
@@ -140,11 +144,18 @@ menu {
         height: 810px;
     }
 
-
     .container {
         position: relative;
         display: flex;
         justify-content: end;
+
+        @media (max-width: 767px) {
+            position: unset;
+        }
+
+        @media (max-width: 480px) {
+            position: unset;
+        }
 
         .hero_img {
             z-index: -1;
@@ -162,7 +173,6 @@ menu {
                 top: 48px;
                 width: 100%;
                 height: 574px;
-                
             }
 
             @media (max-width: 767px) {
@@ -170,12 +180,12 @@ menu {
                 height: 520px;
             }
 
-            @media (max-width: 360px) {
+            @media (max-width: 767px) {
                 top: 60px;
                 left: 0;
-                width: 360px;
-                height: 560px;
-                background-position: 25% 25%;
+                width: 100vw;
+                height: 500px;
+                background-position: 35% 25%;
             }
             
         }
@@ -201,6 +211,10 @@ menu {
             width: 420px;
             margin-right: 60px;
             margin-top: 100px;
+
+            @media (max-width: 480px) {
+                width: 100%;
+            }
 
             h1 {
                 font-size: 48px;
@@ -250,11 +264,16 @@ menu {
         align-items:center;
 
         @media (max-width: 767px) {
-            background-color: rgba(255, 255, 255, 0.84);
+            background-color: rgba(255, 255, 255, 0.95);
         }
 
         @media (max-width: 991px) {
             height: 380px;
+        }
+
+        @media (max-width: 480px) {
+            height: 422px;
+            bottom: 60px;
         }
 
         .text {
@@ -269,13 +288,13 @@ menu {
                 @media (max-width: 991px) {
                     margin-top: 10px;
                 } 
+
+                @media (max-width: 480px) {
+                    font-size: 32px;
+                }
             }
         }
 
-        @media (max-width: 360px) {
-            height: 270px;
-            background-color: rgba(255, 255, 255, 0.94);
-        }
 
         .container {
             display: block;
@@ -321,6 +340,10 @@ menu {
     width: 100%;
     height: 88px;
     background-color: rgba(245, 245, 245, 1);
+
+    @media (max-width: 480px) {
+        bottom: -34px;
+    }
 
     .container {
         display: block;
@@ -384,6 +407,10 @@ menu {
 
     @media (max-width: 767px) { 
         padding: 30px 0;
+    }
+
+    @media (max-width: 576px) { 
+        padding: 10px 0;
     }
 
     .steps {
@@ -501,6 +528,10 @@ menu {
             margin-top: 40px;
         }
 
+        @media (max-width: 480px) {
+            height: 210px;
+        }
+
         &-img {
             width: 100%;
             object-fit: cover;
@@ -520,6 +551,12 @@ menu {
             @media (max-width: 767px) {
                 left: 50%;
                 transform: translateX(-50%);
+            }
+
+            @media (max-width: 576px) {
+                left: 0;
+                transform: none;
+                bottom: 20px;
             }
         }
 
@@ -727,6 +764,11 @@ menu {
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @media (max-width: 576px) { 
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     .subscription-form input[type="email"] {
@@ -737,6 +779,10 @@ menu {
         border: 1px solid rgba(216, 216, 216, 1);
         width: 396px;
         height: 48px;
+
+        @media (max-width: 576px) { 
+            width: 100%;
+        }
     }
 
     .subscription-form input[type="email"]::placeholder {
@@ -755,6 +801,11 @@ menu {
         border-radius: 48px;
         width: 137px;
         height: 48px;
+
+        @media (max-width: 576px) { 
+            margin-top: 16px;
+            width: 100%;
+        }
     }
     .subscription-form input[type="email"]:focus {
         border-color: #ccc;
@@ -787,6 +838,7 @@ footer {
 
     @media (max-width: 767px) { 
         padding: 40px 0 5px;
+        padding-bottom: 40px;
     }
 
     .footer-wrap {
@@ -1019,7 +1071,7 @@ footer {
   z-index: 25;
   display: flex;
   flex-flow: column;
-  height: 90%;
+  height: 100%;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.96);
   overflow-y: auto;
@@ -1027,7 +1079,7 @@ footer {
   transition: 0.8s;
 
   @media (max-width: 991px) {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
   
@@ -1081,4 +1133,8 @@ footer {
 }
 
 
-
+#how-works, #security, #advantages {
+    @media (max-width: 576px) {
+       padding-top: 42px;
+    }
+}

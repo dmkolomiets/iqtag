@@ -1,5 +1,6 @@
 <?php 
 
+$theme = $_POST['theme'];
 $name = $_POST['name'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
@@ -30,8 +31,43 @@ $mail->addAddress('dm.kolomiets@gmail.com');     // Add a recipient
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Data from iqtag';
-$mail->Body    = '
+// $mail->Subject = 'Data from iqtag 1';
+// $mail->Body    = '
+// 	Пользователь оставил данные: <br> 
+
+// 	<b>Имя:</b> ' . $name . ' <br>
+// 	<b>Номер телефона:</b> ' . $phone . '<br>
+// 	<b>E-mail:</b> ' . $email . ' <br>
+// 	<b>Doc:</b> ' . $doc . ' <br>
+// 	<b>Сообщение:</b> ' . $massage .'';
+
+// if(!$mail->send()) {
+//     return false;
+// } else {
+//     return true;
+// }
+
+if ($theme == 'subscription-form-1') {
+	$mail->Subject = 'Data from iqtag 1';
+	$mail->Body    = '
+	Пользователь оставил данные: <br> 
+
+	<b>Имя:</b> ' . $name . ' <br>
+	<b>Номер телефона:</b> ' . $phone . '<br>
+	<b>E-mail:</b> ' . $email . ' <br>
+	<b>Doc:</b> ' . $doc . ' <br>
+	<b>Сообщение:</b> ' . $massage .'';
+
+	if(!$mail->send()) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+if ($theme == 'subscription-form-2') {
+	$mail->Subject = 'Data from iqtag 2';
+	$mail->Body    = '
 	Пользователь оставил данные: <br> 
 
 	<b>Имя:</b> ' . $name . ' <br>
@@ -45,5 +81,7 @@ if(!$mail->send()) {
 } else {
     return true;
 }
+}
 
 ?>
+
