@@ -1,0 +1,22 @@
+
+
+//@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../../node_modules/owl.carousel/dist/assets/owl.carousel.min.css';
+@import '../../node_modules/font-awesome-sass/assets/stylesheets/font-awesome';
+
+
+//utils
+@import 'utils/fonts';
+
+//components
+@import 'components/default';
+@import 'components/button';
+@import 'components/form';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/carousel';
+
+
+
+//templates
+@import 'templates/index';
