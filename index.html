@@ -99,10 +99,10 @@
                     <div class="right-side">
                         <ul class="policy">
                             <li class="policy-item">
-                                <a href="#" class="policy-link">Terms of Use</a>
+                                <a target="_blank" href="https://drive.google.com/file/d/1vqxSqZEuH-9x94fYllw3ZFchjI-5_uB_/view?usp=drive_link" class="policy-link">Terms of Use</a>
                             </li>
                             <li class="policy-item">
-                                <a href="#" class="policy-link">Privacy Policy</a>
+                                <a target="_blank" href="https://drive.google.com/file/d/17jLxRIJ8dSEG8JEvt32RSN-hPiopELcj/view?usp=drive_link" class="policy-link">Privacy Policy</a>
                             </li>
                         </ul>
                         <div class="social">
@@ -334,9 +334,9 @@
     </section>
 
     <section class="client">
-        <h2>Our clients</h2>
+        <!-- <h2>Our clients</h2> -->
 
-        <div class="carousel carousel_clients">
+        <!-- <div class="carousel carousel_clients">
             <div class="carousel-item">
                 <div class="client_logo">
                     <img src="" alt="" class="img-logo">
@@ -352,11 +352,11 @@
                     <img src="" alt="" class="img-logo">
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="container">
             
-            <div class="client-wrap">
+            <!-- <div class="client-wrap">
                 <div class="client_logo">
                     <img src="" alt="" class="img-logo">
                 </div>
@@ -372,13 +372,13 @@
                 <div class="client_logo">
                     <img src="" alt="" class="img-logo">
                 </div>
-            </div>
+            </div> -->
 
             <div class="form-title">Stay on touch</div>
         
             <form action="#" method="post" enctype="multipart/form-data" class="subscription-form">
                 <input type="hidden" name="theme" value="subscription-form-1">
-                 <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="email" name="email" placeholder="Enter your email" required>
                 <button type="submit">Subscribe</button>
             </form>
 
@@ -426,7 +426,7 @@
                     </li>
                 </ul>
                 <button class="btn btn-write">
-                    <a href="mailto:support@iqtag.io">Write to us</a>
+                    <div class="btna">Write to us</div>
                 </button>
             </div>
             <div class="hero_footer">
@@ -438,10 +438,10 @@
                         <div class="right-side">
                             <ul class="policy">
                                 <li class="policy-item">
-                                    <a href="#" class="policy-link">Terms of Use</a>
+                                    <a target="_blank" href="https://drive.google.com/file/d/1vqxSqZEuH-9x94fYllw3ZFchjI-5_uB_/view?usp=drive_link" class="policy-link">Terms of Use</a>
                                 </li>
                                 <li class="policy-item">
-                                    <a href="#" class="policy-link">Privacy Policy</a>
+                                    <a target="_blank" href="https://drive.google.com/file/d/17jLxRIJ8dSEG8JEvt32RSN-hPiopELcj/view?usp=drive_link" class="policy-link">Privacy Policy</a>
                                 </li>
                             </ul>
                             <div class="social">
@@ -458,6 +458,37 @@
            </div>
         </div>
     </footer>
+
+    <div class="overlay">
+        <div class="modal" id="consultation">
+            <div class="modal__close">&times</div>
+            <div class="modal__title">Send message</div>
+            <div class="modal__descr">Have questions about the product? Leave them in the form, and we'll get back to you shortly!</div>
+            <form action="#" method="post" enctype="multipart/form-data" class="form form_modal">
+                <input type="hidden" name="theme" value="subscription-form-2">
+                <div class="form-group">
+                    <label for="email">Enter your e-mail</label>
+                    <input required name="email" type="email">
+                </div>
+                <div class="form-group">
+                    <label for="name">Enter your name</label>
+                    <input required name="name" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="massage">Message</label>
+                    <textarea required name="massage" type="text"></textarea>
+                </div>
+                <button class="button button_submit">Send</button>
+            </form>
+        </div>
+
+        <div class="modal modal_thanks" id="thanks">
+            <div class="modal__img">
+                <img src="images/icon/thanks_img.png" alt="" class="img">
+            </div>
+            <div class="modal__descr">Message sent successfully!</div>
+        </div>
+   </div>
    
         
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>

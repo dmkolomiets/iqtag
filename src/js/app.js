@@ -13,7 +13,7 @@ $(document).ready(function(){
         //pauseOnDotsHover: false, // Отключает паузу при наведении на доты
         //pauseOnFocus: false,     // Отключает паузу при фокусировке на карусели
         //pauseOnHover: false, 
-        autoplaySpeed: 10000000,
+        autoplaySpeed: 10000,
         dots: true,
         centerMode: false,
         responsive: [
@@ -38,7 +38,7 @@ $(document).ready(function(){
         //pauseOnFocus: false,     // Отключает паузу при фокусировке на карусели
         //pauseOnHover: false, 
         autoplay: true,
-        autoplaySpeed: 100000,
+        autoplaySpeed: 10000,
         dots: true,
         centerMode: true,
         responsive: [
@@ -59,7 +59,7 @@ $(document).ready(function(){
         //pauseOnFocus: false,     // Отключает паузу при фокусировке на карусели
         //pauseOnHover: false, 
         autoplay: true,
-        autoplaySpeed: 100000,
+        autoplaySpeed: 10000,
         dots: false,
         centerMode: true,
         
@@ -94,6 +94,27 @@ $(document).ready(function(){
         });
     });
 
+    $('.form_modal').submit(function(e){
+        e.preventDefault(); // отключение перезагрузки страницы при отправке формы
+    
+        var $form = $(this);
+    
+        $.ajax({
+            type: "POST",
+            url: "mailer/smart.php",
+            data: $form.serialize()
+        }).done(function(){
+            $form.find("input").val("");
+            // $form.hide();
+            // $('.success').show();
+            $('#consultation').hide();
+            $('#thanks').show();
+            console.log('ok');
+            //document.location.href = ("http://ru.stackoverflow.com"); // редирект на thank you page
+            $form.trigger('reset');
+        });
+    });
+
 
     function burgerMenu(selector) {
         let menu = $(selector);
@@ -121,10 +142,64 @@ $(document).ready(function(){
       }
       
       burgerMenu('.burger-menu');   
-      
 
-  
 
+      //Modal
+        const buttonWriteToUs = document.querySelectorAll('.btn-write'),
+        buttonOrder = document.querySelectorAll('.button-little'),
+        modalConsultation = document.querySelectorAll('#consultation')[0],
+        modalOrder = document.querySelectorAll('#order')[0],
+        overlay = document.querySelectorAll('.overlay')[0],
+        modalClose = document.querySelectorAll('.modal__close'),
+        html = document.querySelectorAll('html')[0],
+        modalThanks = document.querySelectorAll('#thanks')[0];
+
+        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+        buttonWriteToUs.forEach(function(item) {
+            item.addEventListener('click', function() {
+                overlay.style.display = "block";
+                modalConsultation.style.display = "block";
+                modalThanks.style.display = "none";
+                document.body.classList.add('no-scroll');
+                document.body.style.paddingRight = scrollBarWidth + 'px';
+            });
+        });
+
+        buttonOrder.forEach(function(item) {
+            item.addEventListener('click', function() {
+                overlay.style.display = "block";
+                modalOrder.style.display = "block";
+                html.style.overflow = "hidden";
+                modalThanks.style.display = "none";
+            });
+        });
+
+        modalClose.forEach(function(item) {
+            item.addEventListener('click', function() {
+                overlay.style.display = "none";
+                modalOrder.style.display = "none";
+                html.style.overflow = "visible";
+                document.body.classList.remove('no-scroll');
+                document.body.style.paddingRight = '0';
+            });
+        });
+
+        overlay.addEventListener('click', function() {
+            modalConsultation.style.display = 'none';
+            overlay.style.display = 'none';
+            html.style.overflow = "visible";
+            document.body.classList.remove('no-scroll');
+            document.body.style.paddingRight = '0';
+        });
+
+        modalConsultation.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+
+        modalThanks.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
   });
 
   

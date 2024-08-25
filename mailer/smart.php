@@ -4,7 +4,7 @@ $theme = $_POST['theme'];
 $name = $_POST['name'];
 $phone = $_POST['phone'];
 $email = $_POST['email'];
-$massage = $_POST['text'];
+$massage = $_POST['massage'];
 $doc = $_POST['doc'];
 
 require_once('phpmailer/PHPMailerAutoload.php');
@@ -48,15 +48,11 @@ $mail->isHTML(true);                                  // Set email format to HTM
 // }
 
 if ($theme == 'subscription-form-1') {
-	$mail->Subject = 'Data from iqtag 1';
+	$mail->Subject = 'Email from iqtag';
 	$mail->Body    = '
-	Пользователь оставил данные: <br> 
+	The user left the data: <br> 
 
-	<b>Имя:</b> ' . $name . ' <br>
-	<b>Номер телефона:</b> ' . $phone . '<br>
-	<b>E-mail:</b> ' . $email . ' <br>
-	<b>Doc:</b> ' . $doc . ' <br>
-	<b>Сообщение:</b> ' . $massage .'';
+	<b>E-mail:</b> ' . $email . '';
 
 	if(!$mail->send()) {
 		return false;
@@ -66,14 +62,12 @@ if ($theme == 'subscription-form-1') {
 }
 
 if ($theme == 'subscription-form-2') {
-	$mail->Subject = 'Data from iqtag 2';
+	$mail->Subject = 'Question from a client iqtag';
 	$mail->Body    = '
-	Пользователь оставил данные: <br> 
+	The user left the data: <br> 
 
-	<b>Имя:</b> ' . $name . ' <br>
-	<b>Номер телефона:</b> ' . $phone . '<br>
+	<b>Name:</b> ' . $name . ' <br>
 	<b>E-mail:</b> ' . $email . ' <br>
-	<b>Doc:</b> ' . $doc . ' <br>
 	<b>Сообщение:</b> ' . $massage .'';
 
 if(!$mail->send()) {
