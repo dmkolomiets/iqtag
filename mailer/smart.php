@@ -22,7 +22,7 @@ $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, 
 $mail->Port = 465;                                    // TCP port to connect to
  
 $mail->setFrom('managerbounty@gmail.com', 'iqtag new email');   // От кого письмо 
-$mail->addAddress('dm.kolomiets@gmail.com');     // Add a recipient
+$mail->addAddress('support@iqtag.io');     // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
 //$mail->addCC('cc@example.com');

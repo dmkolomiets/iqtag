@@ -178,10 +178,11 @@ $(document).ready(function(){
         modalClose.forEach(function(item) {
             item.addEventListener('click', function() {
                 overlay.style.display = "none";
-                modalOrder.style.display = "none";
+                // modalOrder.style.display = "none";
                 html.style.overflow = "visible";
                 document.body.classList.remove('no-scroll');
                 document.body.style.paddingRight = '0';
+                console.log('111');
             });
         });
 
@@ -191,6 +192,7 @@ $(document).ready(function(){
             html.style.overflow = "visible";
             document.body.classList.remove('no-scroll');
             document.body.style.paddingRight = '0';
+            
         });
 
         modalConsultation.addEventListener('click', function(event) {
